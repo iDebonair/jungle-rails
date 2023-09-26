@@ -54,7 +54,21 @@
     p {
       text-align: justify;
     }
-    .quantity,
+    
+    .quantity {
+      align-items: flex-end;
+      }
+      span:nth-child(2) {
+        font-size: 0.8em;
+        margin: 0;
+        padding: 0.25em;
+        display: flex;
+        justify-content: space-between;
+        color: rgba(0, 130, 29, 0.7);
+        font-weight: 700;
+        font-family: "Montserrat";
+    }
+
     .price {
       display: flex;
       justify-content: center;

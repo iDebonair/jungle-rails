@@ -3,10 +3,38 @@
     width: max-content;
   }
 
+  td:nth-child(3), td:nth-child(5)  {
+    color: rgba(0, 130, 29, 0.7);
+    font-weight: 700;
+    font-family: "Montserrat";
+  }
+
+  th:nth-child(2) {
+    color: rgba(0, 130, 29, 0.7);
+    font-weight: 700;
+    font-family: "Montserrat"
+  }
+
   button.stripe-button-el span {
     border-radius: 0.25em;
     border: 0.1em solid rgba(0, 130, 29, 0.8);
     background: rgba(0, 130, 29, 0.7);
     color: white;
   }
+
+  .quantity {
+    margin: 0;
+    padding: 0.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 0.8em;
+    }
+    span:last-of-type {
+      font-size: 0.5em;
+    }
+  }
+
 }
