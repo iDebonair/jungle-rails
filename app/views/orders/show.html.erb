@@ -8,6 +8,37 @@
     <h4>Thank you for your order!</h4>
   </div>
 
+  <% if @order.line_items.any? %>
+  <div class="order-details">
+    <h2>Order Details</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Line Item Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.line_items.each do |line_item| %>
+          <%= render partial: 'line_item', locals: { line_item: line_item } %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="order-total">
+    <h3>Total Amount: <%= (@order.total_cents) / 100 %></h3>
+  </div>
+
+  <div class="order-email">
+    <p>Email Used: <%= @order.email %></p>
+  </div>
+<% else %>
+  <p>Your order is empty.</p>
+<% end %>
+
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
