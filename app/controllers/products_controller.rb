@@ -14,7 +14,6 @@ class ProductsController < ApplicationController
     if @product.quantity > 0
       @product.quantity -= 1
       @product.save
-      # Add the item to the cart here if needed.
     end
 
     redirect_back fallback_location: root_path
