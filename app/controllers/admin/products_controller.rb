@@ -41,7 +41,7 @@ class Admin::ProductsController < ApplicationController
   private
 
   def authenticate
-    authenticate_or_request_with_http_basicgi do |username, password|
+    authenticate_or_request_with_http_basic do |username, password|
       username == ENV['username'] && password == ENV['password']
     end
   end
