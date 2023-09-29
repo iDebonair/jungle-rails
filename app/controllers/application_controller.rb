@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception
 
+  before_action :authorize
+
   private
 
   def cart
@@ -35,8 +37,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+
   def authorize
-    redirect_to '/login' unless current_user
+    unless current_user
+      redirect_to '/login' unless request.path == '/login'
+    end
   end
   
 end
