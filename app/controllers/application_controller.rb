@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception
 
-  before_action :authorize
 
   private
 
@@ -39,9 +38,7 @@ class ApplicationController < ActionController::Base
 
 
   def authorize
-    unless current_user
-      redirect_to '/login' unless request.path == '/login'
-    end
+    redirect_to '/login' unless current_user
   end
   
 end
