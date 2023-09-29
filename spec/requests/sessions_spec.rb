@@ -1,35 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :request do
+RSpec.describe "Sessions", type: :request do
   describe "GET /new" do
     it "returns http success" do
-      get "/users/new"
+      get "/sessions/new"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /create" do
     it "returns http success" do
-      get "/users/create"
+      get "/sessions/create"
       expect(response).to have_http_status(:success)
     end
   end
 
-<<<<<<< HEAD
-  describe "GET /login" do
+  describe "GET /destroy" do
     it "returns http success" do
-      get "/users/login"
+      get "/sessions/destroy"
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /logout" do
-    it "returns http success" do
-      get "/users/logout"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-=======
->>>>>>> feature/user-auth
 end
