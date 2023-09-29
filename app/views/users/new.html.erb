@@ -1,0 +1,42 @@
+<h1>Signup!</h1>
+
+<%= form_for :user, url: '/users', html: { class: 'form-signup' } do |f| %>
+  <div class="mb-3 row">
+    <div class="col-6">
+      <%= f.label :first_name, class: 'form-label' %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-6">
+      <%= f.label :last_name, class: 'form-label' %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-6">
+      <%= f.label :email, class: 'form-label' %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-6">
+      <%= f.label :password, class: 'form-label' %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-6">
+      <%= f.label :password_confirmation, class: 'form-label' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= f.submit "Submit", class: 'btn btn-primary border' %>
+  </div>
+<% end %>
