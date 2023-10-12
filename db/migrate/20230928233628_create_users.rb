@@ -9,4 +9,9 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
+  
+  def down
+    # If you want to rollback the migration, you can specify how here
+    drop_table :users, if_exists: true
+  end
 end
